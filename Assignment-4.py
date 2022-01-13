@@ -1,5 +1,6 @@
 """This program converts user-entered integer value to its appropriate wordings, in US styling."""
 
+
 powersOfThousand = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'hextillion',
                     'septillion', 'octillion', 'nonillion', 'decillion', 'undecillion', 'duodecillion', 'tredecillion',
                     'quattuordecillion', 'quindecillion', 'hexdecillion', 'septendecillion', 'octodecillion',
@@ -53,7 +54,7 @@ def getWord(num):
     if tens == 1:
         num = tens * 10 + units
         word += str(dictNumbers[str(num)]) + " "
-        print(word)
+        #print(word)
         return word
 
     if tens != 0:
@@ -61,7 +62,7 @@ def getWord(num):
 
     if units != 0:
         word += str(dictNumbers[str(units)]) + " "
-    print(word)
+    #print(word)
 
     return word
 
@@ -79,7 +80,7 @@ def numberToWord(num):
         list.append(int(numString[0: length % 3]))
     for i in range(length % 3, length, 3):
         list.append(int(numString[i: i + 3]))
-    print(list)
+    #print(list)
 
     for i in range(0, len(list), 1):
         word += getWord(list[i])
