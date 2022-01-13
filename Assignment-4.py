@@ -90,6 +90,9 @@ def numberToWord(num):
 
 def main():
     number = int(input("Enter a number: "))
+    if len(str(number)) > 99:
+        print("Number out of bounds")
+        exit(1)
     wording = numberToWord(number)
     wording = wording.capitalize()
     print(wording)
