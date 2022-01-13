@@ -95,7 +95,7 @@ def main():
         exit(1)
     wording = numberToWord(number)
     wording = wording.capitalize()
-    print(wording)
+    print(f"Given number is: {wording}")
 
 
 if __name__ == '__main__':
