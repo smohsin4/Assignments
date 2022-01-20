@@ -69,6 +69,8 @@ struct Tree* search(struct Tree* root, char* val)
 			temp = temp->left;
 		else if(length > dataLength)
 			temp = temp->right;
+		else if(!isalpha(val[0]))
+			return temp;
 		else
 		{
 			char* str = temp->data;
@@ -86,11 +88,11 @@ struct Tree* search(struct Tree* root, char* val)
 
 //function to find and print the solutions onto the console
 void getSolutions(struct Tree* node, char* str) {
-    if (node == NULL || strlen(node->data) != strlen(str) || str[0] != node->data[0]) return;
+    if (node == NULL || strlen(node->data) != strlen(str)) return;
     
 	getSolutions(node->left, str);
     int i;
-	for(i = 1; i < strlen(str); i++)
+	for(i = 0; i < strlen(str); i++)
 	{
 		if(isalpha(str[i]))
 			if((str[i] != node->data[i])) break;
@@ -125,11 +127,6 @@ int main() {
 	    {
 	    	printf("Exiting...\n");
 	    	break;
-		}
-		if(!isalpha(str[0]))
-		{
-			printf("ERROR: First letter is required\n");
-			continue;
 		}
 		
 		temp = search(root, str);
