@@ -35,72 +35,37 @@ struct Tree* insert(struct Tree* node, char val[100]) {
         newnode -> right = NULL;
         return newnode;
     }
-    
-    if (strlen(val) < strlen(node->data))
+	
+	if(strcmp(node->data, val) >= 0)
     {
-        node -> left = insert(node -> left, val);
-    }
-	else if (strlen(val) > strlen(node->data))
+    	node->left = insert(node->left, val);
+	}
+	else
 	{
-        node -> right = insert(node -> right, val);
-    }
-	else 
-    {
-    	char* str = node->data;
-    	if(val[0] < str[0])
-    		node->left = insert(node->left, val);
-    	else
-    		node->right = insert(node->right, val);
+		node->right = insert(node->right, val);
 	}
     return node;
 }
 
 
-struct Tree* search(struct Tree* root, char* val)
-{
-	int length = strlen(val);
-	int dataLength;
-	struct Tree* temp;
-	temp = root;
-	while(temp != NULL)
-	{
-		dataLength = strlen(temp->data);
-		if(length < dataLength)
-			temp = temp->left;
-		else if(length > dataLength)
-			temp = temp->right;
-		else if(!isalpha(val[0]))
-			return temp;
-		else
-		{
-			char* str = temp->data;
-			if(val[0] < str[0])
-				temp = temp->left;
-			else if(val[0] > str[0])
-				temp = temp->right;
-			else
-				return temp;
-		}
-	}
-	return temp;	
-}
-
-
 //function to find and print the solutions onto the console
 void getSolutions(struct Tree* node, char* str) {
-    if (node == NULL || strlen(node->data) != strlen(str)) return;
+    if (node == NULL) return;
     
 	getSolutions(node->left, str);
     int i;
-	for(i = 0; i < strlen(str); i++)
-	{
-		if(isalpha(str[i]))
-			if((str[i] != node->data[i])) break;
+    if(strlen(str) == strlen(node->data))
+    {
+		for(i = 0; i < strlen(str); i++)
+		{
+			if(isalpha(str[i]))
+				if((str[i] != node->data[i])) break;
+		}
+		
+		if(i == strlen(str))
+			printf("%s   ", node->data);
 	}
-	
-	if(i == strlen(str))
-		printf("%s   ", node->data);
-    getSolutions(node->right, str);
+	getSolutions(node->right, str);
     return;
 }
 
@@ -121,17 +86,16 @@ int main() {
     
     while(1)
     {
-	    printf("Enter the incomplete word (_quit to Quit): ");
+	    printf("Enter the incomplete word (quit() to Quit): ");
 	    gets(str);
-	    if(strcmp(str, "_quit") == 0)
+	    if(!strcmp(str, "quit()"))
 	    {
 	    	printf("Exiting...\n");
 	    	break;
 		}
 		
-		temp = search(root, str);
 		printf("Possible solutions are: ");
-		getSolutions(temp, str);
+		getSolutions(root, str);
 		printf("\n\n\n");
 	}
     return 0;
