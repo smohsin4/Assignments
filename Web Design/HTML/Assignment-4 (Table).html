@@ -19,52 +19,54 @@
 
 	<body>
 		<table cellpadding="10px" cellspacing="10px">
-			<tr style="background: rgb(200, 200, 200);">
-				<th colspan="4" > A complex table </th>
-			</tr>
-			<tr class="table-heading">
-				<td colspan="3"><strong> Invoice #1234567890 </strong></td>
-				<td><strong> 14 January 2025 </strong></td>
-			</tr>
-			<tr> 
-				<td colspan="2"> <strong>Pay to: </strong> <br> Acme Billing Co. <br> 123 Main St. <br> Cityville, NA 12345</td>
-				<td colspan="2"> <strong>Customer: </strong> <br> John Smith <br> 321 Willow way <br> Southeast Northwestshire, MA 54321 </td>
-			</tr>
-			<tr class="table-heading">
-				<td> Name / Description </td>
-				<td> Qty.</td>
-				<td> @ </td>
-				<td> Cost</td>
-			</tr>
-			<tr>
-				<td> Paperclips </td>
-				<td> 1000 </td>
-				<td> 0.01 </td>
-				<td> 10.00 </td>
-			</tr>
-			<tr> 
-				<td> Staples (box)</td>
-				<td> 100</td>
-				<td> 1.00</td>
-				<td> 100.00</td>
-			</tr>
-			<tr>
-				<td colspan="3" class="table-heading"> Subtotal </td>
-				<td> 100.00 </td>
-			</tr>
-			<tr>
-				<td colspan="2" class="table-heading"> Tax  </td>
-				<td> 8% </td>
-				<td> 8.80 </td>
-			</tr>
-			<tr>
-				<td colspan="3" class="table-heading"> Grand Total </td>
-				<td> $118.80 </td>
-			</tr>
-			
+			<thead>
+				<tr style="background: rgb(200, 200, 200);">
+					<th colspan="4" > A complex table </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="table-heading">
+					<td colspan="3"><strong> Invoice #1234567890 </strong></td>
+					<td><strong> 14 January 2025 </strong></td>
+				</tr>
+				<tr> 
+					<td colspan="2"> <strong>Pay to: </strong> <br> Acme Billing Co. <br> 123 Main St. <br> Cityville, NA 12345</td>
+					<td colspan="2"> <strong>Customer: </strong> <br> John Smith <br> 321 Willow way <br> Southeast Northwestshire, MA 54321 </td>
+				</tr>
+				<tr class="table-heading">
+					<td> Name / Description </td>
+					<td> Qty.</td>
+					<td> @ </td>
+					<td> Cost</td>
+				</tr>
+				<tr>
+					<td> Paperclips </td>
+					<td> 1000 </td>
+					<td> 0.01 </td>
+					<td> 10.00 </td>
+				</tr>
+				<tr> 
+					<td> Staples (box)</td>
+					<td> 100</td>
+					<td> 1.00</td>
+					<td> 100.00</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="table-heading"> Subtotal </td>
+					<td> 100.00 </td>
+				</tr>
+				<tr>
+					<td colspan="2" class="table-heading"> Tax  </td>
+					<td> 8% </td>
+					<td> 8.80 </td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3" class="table-heading"> Grand Total </td>
+					<td> $118.80 </td>
+				</tr>
+			</tfoot>
 		</table>
 	</body>
-	
-
-
 </html>
