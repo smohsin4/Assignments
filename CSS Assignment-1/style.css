@@ -1,0 +1,281 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+* {
+    font-size: 2rem;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+}
+.left, 
+.middle, 
+.right {
+    display:  flex;
+    flex-direction: column;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navigation {
+    display: flex;
+    background-color: #333;
+    justify-content: space-between;
+    padding-inline: 5rem;
+}
+.selected-link {
+    background-color: black;
+}
+.nav-left {
+    font-size: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.nav-left p {
+    margin: 0;
+}
+.nav-left, 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem
+}
+.nav-left,
+.nav-left a {
+    color: rgb(220, 220, 220);
+    margin-left: 1rem;
+    text-decoration: none;
+}
+.nav-right {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.nav-right input,
+.nav-right button {
+    font-size: 1.5rem;
+    height: 70%;
+}
+
+.container-main {
+    margin-top: 5rem;
+    margin-left: 4rem;
+    margin-right: 10rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 25% 50% 25%;
+}
+@media (max-width: 1200px) {
+    .container-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container-block {
+    border: 1px solid #BBB;
+    border-radius: 0.4vw;
+    margin-block: 0.8rem;
+}
+.headings {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    background-color: rgb(200, 200, 200);
+}
+.left-top {
+    border-bottom: 0;
+}
+.bordered-list {
+    padding: 0.8rem 2.4rem;
+    width: 100%;
+    border-bottom: 1px solid #BBB;
+}
+.new-item::after {
+    content: 'New';
+    padding-inline: 0.8rem;
+    float: right;
+    background-color: #999;
+    color: white;
+    font-weight: bold;
+    border-radius: .5vw;
+}
+.left-bottom > div{
+    padding: 2rem 2.4rem;
+}
+.btn-engage {
+    margin: 0 2.4rem 3rem;
+}
+
+/*middle part starts*/
+.middle-top {
+    background-color: #ffcccb;
+    border-radius: 0.5vw;
+    padding-inline: 2rem;
+    color: brown;
+}
+.middle-top::after {
+
+}
+
+.middle-bottom-flex {
+}
+.img-section {
+    display: block;
+    background-color: rgba(200, 200, 200, 0.75);
+    width: 12rem;
+    height: 12rem;
+    margin-top: 3rem;
+}
+.img-section::after {
+    content: '120x120';
+    color: #999;
+    display: flex;
+    justify-content: center;
+    padding-top: 40%;
+    font-size: 2rem;
+}
+.section {
+    margin-left: 14rem;
+    margin-top: -15rem;
+}
+.section-header p{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.section-content p{
+    margin: -1rem 1.5rem 1rem 0;
+    font-size: 1.7rem;
+}
+.comment-share {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0.5rem 14rem;
+    color: blue;
+}
+.comment::before {
+
+}
+.share::before {
+
+}
+
+/* right section starts */
+.right-top input,
+.right-top button {
+    border-radius: 0.5vw;
+    border: 1px solid #BBB;
+}
+.progress-bars {
+    margin: 1.5rem 2rem 2rem 2rem;
+    background-color: red;
+    border-top-left-radius: 0.4vw;
+    border-bottom-left-radius: 0.4vw;
+    color: white;
+    font-size: 2rem;
+    padding-block: 0.25rem;
+}
+.bar-one {
+    border-top-right-radius: 0.4vw;
+    border-bottom-right-radius: 0.4vw;
+    background-color: green;
+    text-align: center;
+}
+.bar-two {
+    width: 80%;
+    background-color: blue;
+    padding-left: 8%;
+}
+.bar-three {
+    width: 45%;
+    background-color: orange;
+    padding-left: 5%;
+}
+.bar-four {
+    width: 35%;
+    background-color: red;
+    padding-left: 5%;
+    margin-bottom: 5rem;
+}
+.right-bottom > p {
+    margin: 0;
+    padding: 2rem 2.4rem;
+}
+.right-bottom > ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 1.5rem 2.4rem;
+    border: 1px solid #999;
+    border-radius: 0.4vw;
+    
+}
+.right-bottom > ul > li {
+    padding: 1rem 1rem;
+}
+
+/*footer starts here*/
+.container-foot {
+    width: 100%;
+    background-color: #ddd;
+    display: grid;
+    padding: 5rem 6rem 4rem 6rem;
+    gap: 5rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+.foot-heading {
+    font-size: 150%;
+    font-weight: 500;
+}
+.container-foot > div > p ~ p {
+    display: block;
+    border-radius: 0.4vw;
+    background-color: white;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+}
+.phosfluorescent-images {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+.phosfluorescent-images > div {
+    display: block;
+    width: 11rem;
+    height: 8rem;
+    background-color: #ddd;
+    border: 0.2em solid white;
+    border-radius: 0.5vw;
+}
+.phosfluorescent-images > div::after {
+    content: '110x80';
+    color: #999;
+    font-size: 90%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5rem;
+}
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+footer > div > a{
+    padding-inline: 1rem;
+    text-decoration: none;
+}
+footer > div > a ~ a::before {
+    content: '|';
+    margin-right: 2rem;
+    color: black;
+}
