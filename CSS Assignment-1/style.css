@@ -121,12 +121,6 @@ ul {
     padding-inline: 2rem;
     color: brown;
 }
-.middle-top::after {
-
-}
-
-.middle-bottom-flex {
-}
 .img-section {
     display: block;
     background-color: rgba(200, 200, 200, 0.75);
@@ -160,12 +154,6 @@ ul {
     gap: 1.5rem;
     margin: 0.5rem 14rem;
     color: blue;
-}
-.comment::before {
-
-}
-.share::before {
-
 }
 
 /* right section starts */
